@@ -1,113 +1,104 @@
-import Image from 'next/image'
+'use client';
+
+import Image from 'next/image';
+import { Quicksand } from 'next/font/google';
+import Footer from './components/Footer';
+import Link from 'next/link';
+
+const quicksand = Quicksand({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  display: 'swap',
+  preload: true
+});
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    <div className='flex min-h-screen flex-col items-center justify-between overflow-hidden relative'>
+      <main
+        className={`${quicksand.className} relative flex flex-col md:flex-row flex-grow w-full`}
+      >
+        <section className='md:flex-1 h-[30vh] md:h-auto bg-[#42BBFF] flex flex-col relative justify-between'>
+          <div className='flex items-center space-x-3 pl-3 pt-3 md:pl-7 md:pt-7 lg:pl-12 lg:pt-12'>
+            <Link href={'/'} className='relative block'>
+              <Image
+                src={'/logo/logo.png'}
+                alt='Wraglet.com'
+                height={48}
+                width={50}
+              />
+            </Link>
+            <Link
+              href={'/'}
+              className={`${quicksand.className} font-bold text-3xl text-white`}
+            >
+              wraglet
+            </Link>
+          </div>
+          <div className='self-center hidden md:flex md:w-[312px] lg:w-[500px]'>
+            <p
+              className={`${quicksand.className} md:-mt-10 lg:mt-auto  md:font-medium md:text-base lg:text-3xl leading-[157%] lg:leading-[170%] text-white`}
+            >
+              Oops! That looks ugly. But don’t worry{' '}
+              <span className='font-bold'>Wraglet</span> is currently under
+              development...
+            </p>
+          </div>
+
+          <div className='hidden md:mr-3 md:mb-3 lg:mr-6 lg:mb-6 self-end md:flex items-start md:w-[230px] lg:w-[290px] relative'>
+            <p
+              className={`${quicksand.className} md:font-normal md:text-xs lg:text-base leading-[162%] text-white`}
+            >
+              for the meantime, you can visit the showcase @{' '}
+              <a
+                className='font-bold text-[#1A475B]'
+                href='https://www.wraglet.vercel.app'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                www.wraglet.vercel.app
+              </a>
+            </p>
+          </div>
+        </section>
+        <section className='md:flex-1 flex-grow md:h-auto flex flex-col items-center justify-between md:justify-center bg-[#D3E1E8] overflow-hidden relative'>
+          <div className='hidden relative md:block md:w-[300px] md:h-[290px] lg:w-[552px] lg:h-[535px]'>
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
+              src={'/logo/logo.png'}
+              alt='Wraglet.com'
+              fill
+              sizes='(min-width: 768px) 100vw, (min-width: 1024px) 50vw, 33vw'
             />
-          </a>
-        </div>
-      </div>
+          </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+          <div className='m-auto flex md:hidden px-10 text-left'>
+            <p
+              className={`${quicksand.className} mt-auto font-medium text-2xl leading-loose text-[#104B65]`}
+            >
+              Oops! That looks ugly. But don’t worry{' '}
+              <span className='font-bold'>Wraglet</span> is currently under
+              development...
+            </p>
+          </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+          <div className='md:hidden mr-5 mb-5 self-end flex items-start w-[300px] relative'>
+            <p
+              className={`${quicksand.className} font-medium text-base leading-relaxed text-[#3B81A0]`}
+            >
+              for the meantime, you can visit the showcase @{' '}
+              <a
+                className='font-bold text-[#1A475B]'
+                href='https://www.wraglet.vercel.app'
+                target='_blank'
+                rel='noopener noreferrer'
+              >
+                www.wraglet.vercel.app
+              </a>
+            </p>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
 }
