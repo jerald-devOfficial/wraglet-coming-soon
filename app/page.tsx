@@ -26,6 +26,7 @@ export default function Home() {
                 alt='Wraglet.com'
                 height={48}
                 width={50}
+                priority={true}
               />
             </Link>
             <Link
