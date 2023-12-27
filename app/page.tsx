@@ -53,11 +53,11 @@ export default function Home() {
               for the meantime, you can visit the showcase @{' '}
               <a
                 className='font-bold text-[#1A475B]'
-                href='https://www.wraglet.vercel.app'
+                href='https://wraglet.vercel.app'
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                www.wraglet.vercel.app
+                wraglet.vercel.app
               </a>
             </p>
           </div>
@@ -88,12 +88,12 @@ export default function Home() {
             >
               for the meantime, you can visit the showcase @{' '}
               <a
-                className='font-bold text-[#1A475B]'
-                href='https://www.wraglet.vercel.app'
+                className='font-bold text-[#1A475B]//'
+                href='https://wraglet.vercel.app'
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                www.wraglet.vercel.app
+                wraglet.vercel.app
               </a>
             </p>
           </div>
